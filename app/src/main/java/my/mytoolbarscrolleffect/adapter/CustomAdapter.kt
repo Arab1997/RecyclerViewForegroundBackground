@@ -1,26 +1,21 @@
 package com.example.myapplication.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.model.Member
 
 
 import my.mytoolbarscrolleffect.R
 
-import my.mytoolbarscrolleffect.helper.RecyclerItemTouchHelper
-import java.text.FieldPosition
 import java.text.ParsePosition
 import java.util.*
 
 
 //class CustomAdapter(val members: ArrayList<Member>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), ItemTouchHelperAdapter{ //Paging  add method val listener: OnBottomReachedListener
-class CustomAdapter(val members: ArrayList<Member>, dragsDirs: Int, swipeDirs: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CustomAdapter(val members: ArrayList<Member>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     //Paging  add method val listener: OnBottomReachedListener
 
@@ -45,23 +40,8 @@ class CustomAdapter(val members: ArrayList<Member>, dragsDirs: Int, swipeDirs: I
         var view_foreground = itemView.findViewById<TextView>(R.id.view_foreground)
         var view_background = itemView.findViewById<TextView>(R.id.view_background)
     }
-    /*override fun onItemDismiss(position: Int){
-        members.removeAt(position)   // usha positiondagi itemni membersdan optashash
-        notifyDataSetChanged()   // boshqattan yangilash
-    }
 
-    override fun onItemMove(fromPosition: Int, toPosition: Int){   // qaysidir postiondan qaysidir postionga oborib qoyish itemni
-        if (fromPosition < toPosition){
-            for (i in fromPosition until  toPosition){
-                Collections.swap(members, i, i + 1)
-            }
-        }else{
-            for (i in fromPosition downTo  toPosition + 1){
-                Collections.swap(members, i, i - 1)
-            }
-        }
-        notifyItemMoved(fromPosition, toPosition)
-    }*/
+
     }
 
 
