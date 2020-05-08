@@ -12,13 +12,17 @@ import com.example.myapplication.model.Member
 
 
 import my.mytoolbarscrolleffect.R
-import my.mytoolbarscrolleffect.helper.ItemTouchHelperAdapter
+
+import my.mytoolbarscrolleffect.helper.RecyclerItemTouchHelper
 import java.text.FieldPosition
 import java.text.ParsePosition
 import java.util.*
 
 
-class CustomAdapter(val members: ArrayList<Member>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), ItemTouchHelperAdapter{ //Paging  add method val listener: OnBottomReachedListener
+//class CustomAdapter(val members: ArrayList<Member>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), ItemTouchHelperAdapter{ //Paging  add method val listener: OnBottomReachedListener
+class CustomAdapter(val members: ArrayList<Member>, dragsDirs: Int, swipeDirs: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    //Paging  add method val listener: OnBottomReachedListener
 
     override fun getItemCount(): Int {
         return members.size
@@ -33,15 +37,15 @@ class CustomAdapter(val members: ArrayList<Member>) : RecyclerView.Adapter<Recyc
         val member = members.get(position)
 
         if (holder is CustomViewHolder) {
-            holder.first_name.setText(member.firstname)
-            holder.last_name.setText(member.lastName)
+            holder.view_foreground.setText(member.firstname)
+            holder.view_background.setText(member.lastName)
         }
     }
     class CustomViewHolder(iteView: View) : RecyclerView.ViewHolder(iteView) {
-        var first_name = itemView.findViewById<TextView>(R.id.first_name)
-        var last_name = itemView.findViewById<TextView>(R.id.last_name)
+        var view_foreground = itemView.findViewById<TextView>(R.id.view_foreground)
+        var view_background = itemView.findViewById<TextView>(R.id.view_background)
     }
-    override fun onItemDismiss(position: Int){
+    /*override fun onItemDismiss(position: Int){
         members.removeAt(position)   // usha positiondagi itemni membersdan optashash
         notifyDataSetChanged()   // boshqattan yangilash
     }
@@ -57,7 +61,7 @@ class CustomAdapter(val members: ArrayList<Member>) : RecyclerView.Adapter<Recyc
             }
         }
         notifyItemMoved(fromPosition, toPosition)
-    }
+    }*/
     }
 
 

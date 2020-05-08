@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/view_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#eeee"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="100dp"
+        android:textColor="#cbcbcb">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A1A1A1"
+            android:gravity="center_vertical|right"
+            android:paddingRight="20dp">
 
-        <TextView
-            android:id="@+id/first_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="first_name1"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
 
-        <TextView
-            android:id="@+id/last_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="last_name"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_launcher_background"/>
+        </LinearLayout>
 
-
-    </LinearLayout>
-
-    <LinearLayout
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/view_foreground"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ffffff"
-        >
+        android:layout_height="100dp"
+        android:textColor="#ffffff"
+        android:padding="10dp"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-
-    </LinearLayout>
-</LinearLayout>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="Swipe any item"
+               android:gravity="center_vertical|center_horizontal"
+               android:textColor="#000000"/>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

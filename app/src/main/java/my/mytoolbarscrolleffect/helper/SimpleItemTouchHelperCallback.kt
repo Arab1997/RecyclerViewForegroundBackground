@@ -1,3 +1,4 @@
+/*
 package my.mytoolbarscrolleffect.helper
 
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -29,4 +30,4 @@ class SimpleItemTouchHelperCallback(private  val mAdapter:ItemTouchHelperAdapter
         mAdapter.onItemDismiss(viewHolder.adapterPosition)
 
     }
-}
+}*/
