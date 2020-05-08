@@ -2,6 +2,7 @@ package com.example.baseactivity.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.adapter.CustomAdapter
 import com.example.myapplication.model.Member
@@ -21,6 +22,10 @@ open class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         recyclerView.layoutManager = GridLayoutManager(this, 1)
+        val animation = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_fall_down)
+        val animation1 = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_from_bottom)
+        val animatio2 = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_from_right)
+        recyclerView.layoutAnimation = animation
 
     }
     //refreshAdapter- har qanday malumotni yangilansa adapter refresh  qibergan
